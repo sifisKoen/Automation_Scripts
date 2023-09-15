@@ -1,14 +1,19 @@
 #!/bin/sh
 
-# Add user hadoop
-sudo useradd -r hadoop -m -b /opt/hadoop --shell /bin/bash
+# Ask user for a name for the hadoop user
+printf "Enter the name for the Hadoop user: "
+read -r hadoop_user_name
 
-echo "Pleas enter a password for the hadoop user: "
-read -s hadoop_user_password
+# Add user
+sudo useradd -r "$hadoop_user_name" -m -b /opt/hadoop --shell /bin/bash
+
+# Ask user for a password for the new hadoop user
+echo "Pleas enter a password for the $hadoop_user_name user: "
+read -r hadoop_user_password
 echo
 
 # Set the password for the hadoop user
-echo "hadoop:$hadoop_user_password" | sudo chpasswd
+echo "$hadoop_user_name:$hadoop_user_password" | sudo chpasswd
 
 
 # Generate SSH key and add to authorized_keys
@@ -23,10 +28,10 @@ sudo apt install default-jdk default-jre -y
 sudo java -version
 
 # Download Hadoop
-sudo -u hadoop wget https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.2.4/hadoop-3.2.4.tar.gz -O hadoop-3.2.4.tar.gz
+sudo -u "$hadoop_user_name" wget https://www.apache.org/dyn/closer.cgi/hadoop/common/hadoop-3.2.4/hadoop-3.2.4.tar.gz -O hadoop-3.2.4.tar.gz
 
 # Append environment variables to hadoop user .bashrc file
-sudo -u hadoop bash -c 'cat >> ~/.bashrc' <<EOL
+sudo -u "$hadoop_user_name" bash -c 'cat >> ~/.bashrc' <<EOL
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export HADOOP_HOME=/opt/hadoop
 export PATH=\$PATH:\$HADOOP_HOME/bin
