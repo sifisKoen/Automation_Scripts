@@ -3,6 +3,16 @@
 # Install Java
 install_java(){
 
+    printf "   ___                  
+              |_  |                 
+                | | __ ___   ____ _ 
+                | |/ _  \ \ / / _  |
+            /\__/ / (_| |\ V / (_| |
+            \____/ \__,_| \_/ \__,_|
+    \n" >&2
+    
+    printf " "
+    
     echo "Installing Java..."    
     sudo apt update
     sudo apt install default-jdk default-jre -y
@@ -12,6 +22,15 @@ install_java(){
 
 create_hadoop_user(){
     
+    printf " 
+           _   _               
+          | | | |              
+          | | | |___  ___ _ __ 
+          | | | / __|/ _ \ '__|
+          | |_| \__ \  __/ |   
+           \___/|___/\___|_|   \n" >&2
+    
+
     printf "Do you want to create new user to install Hadoop? (yes/no): " >&2
     read -r choice
 
@@ -40,6 +59,14 @@ generate_new_ssh_key(){
     user="$1"
     home_dir="$2"
     
+    printf " 
+          _____ _____ _   _ 
+          /  ___/  ___| | | |
+          \  --.\  --.| |_| |
+            --. \`--. \  _  |
+          /\__/ /\__/ / | | |
+          \____/\____/\_| |_/ \n" >&2
+
     # Generate ssh keys for hadoop user and set up local ssh
     echo "Setting up SSH for $user..."
     sudo -u "$user" ssh-keygen -t rsa -f "$home_dir/.ssh/id_rsa" -N ""
@@ -53,6 +80,15 @@ downlaod_and_extract_hadoop(){
     
     user="$1"
     home_dir="$2"
+    printf "
+           _   _           _                   
+          | | | |         | |                  
+          | |_| | __ _  __| | ___   ___  _ __  
+          |  _  |/ _  |/ _  |/ _ \ / _ \| '_ \ 
+          | | | | (_| | (_| | (_) | (_) | |_) |
+          \_| |_/\__,_|\__,_|\___/ \___/| .__/ 
+                                      | |    
+                                      |_|   \n" >&2
 
     # Download and extract Hadoop for hadoop user
     echo "Downloading and extracting Hadoop..."
