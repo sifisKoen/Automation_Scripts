@@ -1,7 +1,4 @@
-# Hadoop installation script
-
-
-## Hadoop Installation Script :bookmark_tabs:
+# Hadoop Installation Script :bookmark_tabs:
 
 This script install Hadoop and setting up the Hadoop Environment for **Linux** system (In this case **Debian** base systems).
 The script install **Java**, creates a new user for Hadoop, create a SSH key for the new use, downloads and extract Hadoop, and finally configure the environment for Hadoop.
@@ -18,7 +15,7 @@ The script install **Java**, creates a new user for Hadoop, create a SSH key for
 
 1. Clone the repository
    ```bash
-        git clone https://github.com/sifisKoen/Automation_Stripts.git
+        git clone https://github.com/sifisKoen/Automation_Scripts.git
         cd Automation_Scripts/Hadoop installation script
    ```
 2. Make the script executable
