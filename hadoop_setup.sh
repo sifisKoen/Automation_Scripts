@@ -11,8 +11,6 @@ install_java(){
             \____/ \__,_| \_/ \__,_|
     \n" >&2
     
-    printf " "
-    
     echo "Installing Java..."    
     sudo apt update
     sudo apt install default-jdk default-jre -y
