@@ -1,4 +1,4 @@
-# Automation_Stripts
+# Automation_Scripts
 
 
 ## Hadoop Installation Script :bookmark_tabs:
