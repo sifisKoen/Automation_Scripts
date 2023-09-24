@@ -96,7 +96,7 @@ main(){
     error_handle
 
     install_wtf_repository
-    install_java
+    java_install
     install_cassandra
 
     final_output
