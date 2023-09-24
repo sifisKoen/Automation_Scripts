@@ -82,10 +82,20 @@ final_output(){
 
     status_command="nodetool status"
     connect_command="cqlsh"
+    
+    printf "
+     _____                               _             _____          _        _ _          _ 
+    /  __ \                             | |           |_   _|        | |      | | |        | |
+    | /  \/ __ _ ___ ___  __ _ _ __   __| |_ __ __ _    | | _ __  ___| |_ __ _| | | ___  __| |
+    | |    / _  / __/ __|/ _  | '_ \ / _  | '__/ _  |   | || '_ \/ __| __/ _  | | |/ _ \/ _  |
+    | \__/\ (_| \__ \__ \ (_| | | | | (_| | | | (_| |  _| || | | \__ \ || (_| | | |  __/ (_| |
+     \____/\__,_|___/___/\__,_|_| |_|\__,_|_|  \__,_|  \___/_| |_|___/\__\__,_|_|_|\___|\__,_|
+                                                                                             
+    \n" >&2
 
     echo "-------------------------------------------------------------------------"
-    printf "\nRun '%s' command so to check the status of your Cassandra db !\n", "$status_command"
-    printf "Run '%s' command so to connect to your Cassandra db !", "$connect_command"
+    printf "\nRun '%s' command so to check the status of your Cassandra db !\n" "$status_command"
+    printf "Run '%s' command so to connect to your Cassandra db !\n" "$connect_command"
     echo "-------------------------------------------------------------------------"
 }
 
