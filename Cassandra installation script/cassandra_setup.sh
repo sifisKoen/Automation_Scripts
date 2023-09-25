@@ -43,7 +43,7 @@ java_install(){
             \____/ \__,_| \_/ \__,_|
     \n" >&2
     
-    sudo apt install openjdk-8-jdk
+    sudo apt install openjdk-8-jdk -y
     error_handle
 
 }
